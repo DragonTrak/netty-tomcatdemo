@@ -22,7 +22,7 @@ public class Tomcat {
 
     public void start(int port){
         EventLoopGroup bossGroup = new NioEventLoopGroup();
-        NioEventLoopGroup workerGroup = new NioEventLoopGroup();
+        EventLoopGroup workerGroup = new NioEventLoopGroup();
         try{
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup,workerGroup).channel(NioServerSocketChannel.class)
